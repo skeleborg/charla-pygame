@@ -77,7 +77,7 @@ class Main:
         if firing:
             single_bullet_group.draw(window)
             single_bullet_group.sprite.update()
-            if pygame.sprite.collide_mask(samus2, bullet):
+            if pygame.sprite.collide_mask(samus2, bullet) and (samus2.alive() and bullet.alive()):
                 bullet.kill()
                 samus2.kill()
                 firing = False
